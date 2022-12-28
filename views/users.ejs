@@ -1,0 +1,124 @@
+<!-- This code appears to be written in a templating language, such as EJS or Handlebars. 
+It generates an HTML table that displays a list of users, along with their username and
+ a boolean value indicating whether their account is disabled. 
+ The table also includes two buttons for each user: one for editing the user's information,
+  and another for removing the user's account. 
+The code also includes a link for adding a new user and a link for logging out. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This site is used to add, view, edit and check audit trail for a customer's website">
+    <meta name="keywords" content="Create Users, Remove Users, View Users">
+    <meta name="author" content="Jay Awoniyi">
+    <title>Users</title>
+    <link rel="stylesheet" href="http://localhost:3000/userstyle.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> -->
+  </head>
+  
+  <body>
+    <div class="container">
+
+      <div id="sidebar" class="sidebar">
+       
+          <div class="sidealign">
+            <div> 
+              <img class="material-icons md-24 theWhite  md-light" src="/images/app_registration_FILL0_wght400_GRAD0_opsz48.png" style="color: #fff;"  width="30px" height="30px" alt="Add icon" />
+            </div>
+            <div>
+              <a href="/users/add" class=" lb add-button">Add</a>
+            </div>
+          </div>
+          
+          <div class="sidealign">
+            <div>
+              <img class="material-icons md-24 theWhite  md-light" src="/images/person_add_FILL0_wght400_GRAD0_opsz48.png" style="color: #fff;"  width="30px" height="30px" alt="Signup icon" />
+            </div>
+            <div>
+              <a href="/signup" class="lb ">Sign Up</a>
+            </div>
+          </div>
+          
+          <div class="sidealign">
+            <div>
+              <img class="material-icons  md-24 theWhite  md-light" src="/images/group_FILL0_wght400_GRAD0_opsz48.png"  style="color: #fff;" width="30px" height="30px" alt="Users icon" />
+            </div>
+            <div>
+              <a href="/users" class="lb">Users</a>
+            </div> 
+          </div>
+          
+  
+          <div class="sidealign">
+            <div>
+              <img class="material-icons md-24 theWhite  md-light" src="/images/logout_FILL0_wght400_GRAD0_opsz48.png" style="color: #fff;" width="30px" height="30px"  alt="Logout icon" />
+            </div>
+            <div>
+              <a href="/logout" class="lb">Logout</a>
+            </div> 
+          </div>
+
+          <div class="sidealign">
+            <div>
+              <img class="material-icons md-24 theWhite  md-light" src="/images/person_FILL0_wght400_GRAD0_opsz48.png"  width="30px" height="30px" alt="User detail" />
+            </div>
+            <div>
+              <%- include('user-info') %>
+            </div>
+          </div>
+
+      </div>
+
+      
+
+      <div id="heading"><h1>USERS</h1></div>
+    
+      <div id="table">
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Username</th>
+              <th>Is disabled</th>
+              <th>Edit</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.map((user, index) => { %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= user.username %></td>
+                <td><%= user.isDisabled %></td>
+                <td>
+                  <!-- <a href="/users/<%= user._id %>/edit" class="edit-button">Edit</a> -->
+                  <!-- <button class="button login" href="/users/<%= user._id %>/edit" type="submit">Edit</button> -->
+                  <!-- <a class="button signup"   type="submit">Edit</a> -->
+                  <a href="/users/<%= user._id %>/edit" class="button signup">Edit</a>
+                  
+                </td>
+                <td>
+                  <form action="/users/<%= user._id %>/remove" method="post">
+                    <button class="button remove" type="submit">Remove</button>
+                    
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="footer">
+        
+        <h6>Built by Jay Awoniyi &copy; <script>document.write(new Date().getFullYear())</script></h6> 
+        
+      </div>
+
+    </div>
+   
+  </body>
+
+</html>

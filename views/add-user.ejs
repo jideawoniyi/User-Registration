@@ -1,0 +1,49 @@
+<!-- add-user.html -->
+
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <title>Add User</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This site is used to add, view, edit and check audit trail for a customer's website">
+    <meta name="keywords" content="Add User">
+    <meta name="author" content="Jay Awoniyi">
+    <link rel="stylesheet" href="http://localhost:3000/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="head">
+        <h1 tabindex="-1">Add User</h1>
+      </div>
+      <div id="instruction">
+        <% if (!error) { %>
+        
+        <% } else { %>
+          <h5><%= error %></h5>
+        <% } %>
+      </div>
+      <div id="form" class="rectangle-right">
+        <form action="/users/add" method="post">
+          <input type="text" id="username" name="username" placeholder="Enter username"  autocomplete="off" autocorrect="off" autocapitalize="off" aria-required="true" required="required" spellcheck="false"  aria-invalid="false" autofocus="">
+          <!-- Get password input -->
+          <input type="password" id="password"  name="password" placeholder="Enter password" aria-required="true" required="required"  autocomplete="off" aria-invalid="false">
+          <!-- Show tooltip -->
+          <br>
+          <span id="tooltip"></span>
+          <br>
+          <button class="button login" type="submit">Submit</button>
+         
+        </form>
+      </div>
+      <div id="footer">
+        <footer id="my-element">
+          <hr>
+          <p>Built by Jay Awoniyi &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </footer>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </body>
+</html>
+

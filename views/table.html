@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8">
+        <title>Table Pagination</title>
+            <style>
+                    /* Add some styling for the table and pagination controls */
+                    table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    }
+                    th, td {
+                    border: 1px solid #ccc;
+                    padding: 8px;
+                    }
+                    #paginationControls {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 16px;
+                    }
+                    #paginationControls a {
+                    display: inline-block;
+                    margin: 0 8px;
+                    text-decoration: none;
+                    color: #333;
+                    }
+                    #paginationControls a.active {
+                    font-weight: bold;
+                    color: #000;
+                    }
+            </style>
+        </head>
+        <body>
+        <table id="dataTable">
+            <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+                <th>Column 5</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- This is where the table rows will go -->
+            </tbody>
+        </table>
+
+        <div id="paginationControls">
+            <!-- This is where the pagination controls will go -->
+        </div>
+
+            <sript>
+                const dataTable = document.querySelector('#dataTable');
+                const paginationControls = document.querySelector('#paginationControls');
+
+                // Sample data for the table
+                const data = [
+                { col1: 'Value 1', col2: 'Value 2', col3: 'Value 3', col4: 'Value 4', col5: 'Value 5' },
+                { col1: 'Value 6', col2: 'Value 7', col3: 'Value 8', col4: 'Value 9', col5: 'Value 10' },
+                // ... more rows
+                ];
+
+                // Number of rows to display per page
+                const rowsPerPage = 10;
+
+                // Set up the pagination controls
+                const numPages = Math.ceil(data.length / rowsPerPage);
+                for (let i = 0; i < numPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.textContent = i + 1;
+                pageLink.addEventListener('click', e => {
+                    e.preventDefault();
+                    showPage(i + 1);
+                });
+                paginationControls.appendChild(pageLink);
+                }
+
+                // Show the first page by default
+                showPage(1);
+
+                // Function to display the specified page of data
+                function showPage(page) {
+                // Clear the current rows in the table
+                dataTable.querySelectorAll('tbody tr').forEach(row => row.remove());
+
+                // Function to display the specified page of data
+                function showPage(page) {
+                // Clear the current rows in the table
+                dataTable.querySelectorAll('tbody tr').forEach(row => row.remove());
+
+                // Calculate the starting and ending indices for the rows to display
+                const startIndex = (page - 1) * rowsPerPage;
+                const endIndex = Math.min(startIndex + rowsPerPage, data.length);
+
+                // Add the rows for the current page to the table
+                for (let i = startIndex; i < endIndex; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${data[i].col1}</td>
+                    <td>${data[i].col2}</td>
+                    <td>${data[i].col3}</td>
+                    <td>${data[i].col4}</td>
+                    <td>${data[i].col5}</td>
+                `;
+                dataTable.appendChild(row);
+                }
+
+                // Highlight the active page link
+                paginationControls.querySelectorAll('a').forEach(link => {
+                link.classList.remove('active');
+                if (link.textContent == page) {
+                link.classList.add('active');
+                }
+                });
+                }
+            </script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </body>
+</html>

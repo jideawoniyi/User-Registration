@@ -1,0 +1,239 @@
+/* style.css */
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background-color: #29a95c;
+
+}
+
+.container{
+  display: grid;
+  flex-direction: column;
+  grid-template-columns:100%;
+  grid-template-rows:25% 25% 25% 25% ;
+  grid-template-areas:
+  "head"
+  "instruction"
+  "form"
+  "footer";
+  justify-content: center;
+  align-items: center;
+  background-color: #29a95c;
+}
+
+
+#head{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: head;
+  color: white;
+}
+
+hr{
+  border: 1px solid #1d5f09;
+}
+
+#instruction{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: instruction;
+}
+
+#form{
+  display: flex;
+  grid-area: form;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#footer{
+  margin-top: 220px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  grid-area: footer;
+  background-color: #29a95c;
+}
+
+h5 {
+  font-family: Helvetica, sans-serif;
+}
+
+
+/* Center the form and h1 element in the right rectangle */
+form, h1 {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+
+.button.signup {
+    quotes: "“" "”";
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: content-box;
+    font: inherit;
+    overflow: visible;
+    vertical-align: inherit;
+    -webkit-font-smoothing: antialiased;
+    font-synthesis: none;
+    color: #fff;
+    display: inline-block;
+    white-space: nowrap;
+    --sk-button-margin-horizontal: 18px;
+    --sk-button-margin-vertical: 18px;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.17648;
+    min-width: 26px;
+    margin: 0;
+    border: 1px solid #0e40a5;
+    direction: ltr;
+    background: #0071e3;
+    cursor: pointer;
+    text-align: center;
+    padding: 12px 22px;
+    border-radius: 980px;
+    text-decoration: none;
+}
+
+
+.button.login  {
+  quotes: "“" "”";
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: content-box;
+  font: inherit;
+  overflow: visible;
+  vertical-align: inherit;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+  color: #fff;
+  display: inline-block;
+  white-space: nowrap;
+  --sk-button-margin-horizontal: 18px;
+  --sk-button-margin-vertical: 18px;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  line-height: 1.17648;
+  min-width: 26px;
+  margin: 0;
+  border: 1px solid #1d5f09;
+  direction: ltr;
+  background: #31A15D;
+  cursor: pointer;
+  text-align: center;
+  padding: 12px 22px;
+  border-radius: 980px;
+}
+
+
+.button.login:hover  {
+  background-color:  #479b2e;
+  color: #1d5f09;
+}
+
+
+
+input[type=text]{
+-webkit-text-size-adjust: 100%;
+quotes: "“" "”";
+-webkit-tap-highlight-color: rgba(0,0,0,0);
+font-synthesis: none;
+-webkit-font-smoothing: antialiased;
+direction: ltr;
+font-size: 17px;
+line-height: 1.23536;
+font-weight: 400;
+letter-spacing: -.022em;
+font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+width: 100%;
+height: 3.29412rem;
+border-top-left-radius:12px;
+border-top-right-radius:12px;
+border-bottom-left-radius: 0;
+border-bottom-right-radius: 0;
+box-sizing: border-box;
+padding: 1.05882rem .94118rem 0;
+text-align: left;
+appearance: none;
+background-color: hsla(0,0%,100%,.8);
+text-overflow: ellipsis;
+margin: 0;
+border: 1px solid #1d5f09;
+color: #494949;
+padding-right: 43px;
+}
+
+
+input[type=password]{
+  -webkit-text-size-adjust: 100%;
+  quotes: "“" "”";
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  direction: ltr;
+  font-size: 17px;
+  line-height: 1.23536;
+  font-weight: 400;
+  letter-spacing: -.022em;
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 100%;
+  height: 3.29412rem;
+  border-top-left-radius:0;
+  border-top-right-radius:0;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-sizing: border-box;
+  padding: 1.05882rem .94118rem 0;
+  text-align: left;
+  appearance: none;
+  background-color: hsla(0,0%,100%,.8);
+  text-overflow: ellipsis;
+  margin: 0;
+  border: 1px solid #1d5f09;
+  border-top: 0;
+  color: #494949;
+  padding-right: 43px;
+  }
+
+
+.form-textbox-input { font-size: 17px; 
+  line-height: 1.23536;
+   font-weight: 400;
+    letter-spacing: -0.022em;
+     font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+     width: 100%;
+      height: 3.29412rem;
+       border-radius: 12px; 
+       border-width: 1px; 
+       border-style: solid; 
+       box-sizing: border-box; 
+       margin-bottom: 0.82353rem; 
+       padding: 1.05882rem 0.94118rem 0px;
+        text-align: left; 
+        appearance: none; 
+      }
+
+
+      #username::placeholder {
+        transition: font-size 0.2s, opacity 0.2s, position 0.2s;
+      }
+      
+      #my-element {
+        font-size: 12px;
+        color: #333;
+        font-family: 'Helvetica Neue', sans-serif;
+      }

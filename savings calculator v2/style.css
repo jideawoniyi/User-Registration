@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Input fields */
+div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+label {
+  width: 150px;
+  font-weight: bold;
+}
+
+input[type="number"] {
+  width: 200px;
+  height: 35px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+/* Calculate button */
+button {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 40px;
+  background-color: #2ecc71;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+/* Results section */
+#results {
+  margin-top: 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
+}
+
+#results p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #333;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  div {
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  /* Styles for screens between 601px and 900px wide */
+  h1 {
+    font-size: 24px;
+  }
+
+  label {
+    width: 200px;
+  }
+
+  input[type="number"] {
+    width: 250px;
+  }
+
+  button {
+    width: 200px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  /* Styles for screens between 901px and 1200px wide */
+  h1 {
+    font-size: 28px;
+  }
+
+  label {
+    width: 250px;
+  }
+
+  input[type="number"] {
+    width: 300px;
+  }
+
+  button {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1201px) {
+  /* Styles for screens wider than 1201px */
+  h1 {
+    font-size: 32px;
+  }
+
+  label {
+    width: 300px;
+  }
+
+  input[type="number"] {
+    width: 350px;
+  }
+
+  button {
+    width: 300px;
+  }
+}
+

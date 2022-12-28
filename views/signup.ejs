@@ -1,0 +1,76 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <link rel="stylesheet" href="http://localhost:3000/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div id="head"> 
+        <h1 tabindex="-1">Sign Up</h1>
+      </div>
+      <div id="instruction">
+        <p><%= message %></p>
+      </div>
+      <div id="form" class="rectangle-right">
+        <form action="/signup"  method="post">
+          <input type="text" id="username" name="username" placeholder="Enter username"  autocomplete="off" autocorrect="off" autocapitalize="off" aria-required="true" required="required" spellcheck="false"  aria-invalid="false" autofocus="">
+          <input type="password" id="password" name="password" placeholder="Enter password" aria-required="true" required="required"  autocomplete="off" aria-invalid="false">
+          <br>
+          <span id="tooltip"></span>
+          <br>
+          <button class="button signup" type="submit">Signup</button>
+        </form>
+      </div>
+      <div id="footer">
+        <footer id="my-element">
+          <hr>
+          <p>Built by Jay Awoniyi &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </footer>
+      </div>
+    </div>
+    <script>
+      window.onload = function() {
+        const passwordInput = document.getElementById("password");
+        passwordInput.addEventListener("input", function(event) {
+          const password = event.target.value;
+          const result = checkPassword(password);
+          const tooltip = document.getElementById("tooltip");
+          if (result === "Password is valid") {
+            tooltip.style.color = "green";
+          } else {
+            tooltip.style.color = "red";
+          }
+          if (password.length === 0) {
+            tooltip.innerHTML = "";
+          } else {
+            tooltip.innerHTML = "" + result;
+          }
+        });
+      };
+
+      function checkPassword(password) {
+        if (password.length >= 8) {
+          const hasCapitalLetter = /[A-Z]/.test(password);
+          const hasSpecialCharacter = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
+          const hasNumber = /\d/.test(password);
+          if (hasCapitalLetter && hasSpecialCharacter && hasNumber) {
+            return "Password is valid";
+          } else {
+            if (!hasCapitalLetter) {
+              return "Password must contain at least one capital letter";
+            } else if (!hasSpecialCharacter) {
+              return "Password must contain at least one special character";
+              } else if (!hasNumber) {
+                return "Password must contain at least one number";
+              }
+            }
+          } else {
+            return "Password must be at least 8 characters long";
+          }
+        }
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </body>
+    </html>
+    

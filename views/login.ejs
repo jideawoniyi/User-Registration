@@ -1,0 +1,57 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html lang="eng">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="http://localhost:3000/style.css">
+  </head>
+  <body>
+    <div class="container">
+
+        <!-- <div class="rectangle-left"></div> -->
+      <div id="head"> 
+        <h1 tabindex="-1">Login</h1>
+      </div>
+    
+      <div id="instruction">
+        <h5><%= message %></h5>
+      </div>
+
+    
+      <div id="form" class="rectangle-right">
+    
+        <form action="/login" method="post">
+            
+          <!-- Get username input -->
+          <input type="text" id="username" name="username" placeholder="Enter username"  autocomplete="off" autocorrect="off" autocapitalize="off" aria-required="true" required="required" spellcheck="false"  aria-invalid="false" autofocus="">
+          
+          <!-- Get password input -->
+          <input type="password" id="password" name="password" placeholder="Enter password" aria-required="true" required="required"  autocomplete="off" aria-invalid="false">
+          <br>
+          <br>
+          <button class="button login" type="submit">Log In</button>
+          <a class="button signup" href="/signup" type="submit">Sign Up</a>
+    
+
+        </form>
+
+      </div>
+
+      <div id="footer">
+        <footer id="my-element">
+          <hr>
+          <p>Built by Jay Awoniyi &copy; <script>document.write(new Date().getFullYear())</script></p>
+        </footer>
+      </div>
+
+    </div>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      
+    </body>
+    
+    
+    </html>
+    

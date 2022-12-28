@@ -1,0 +1,21 @@
+<!-- user-info.ejs partial file: -->
+
+<div class="user-info">
+    <% let date = new Date();
+    let hour = date.getHours();
+    let greeting;
+ 
+    switch (true) {
+      case (hour >= 6 && hour < 12):
+        greeting = "Morning";
+        break;
+      case (hour >= 12 && hour < 18):
+        greeting = "Afternoon";
+        break;
+      default:
+        greeting = "Evening";
+    }
+ %>
+ 
+ <h6><%= greeting %>, <%= user %></h6>
+ </div>
